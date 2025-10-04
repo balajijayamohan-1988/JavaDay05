@@ -1,0 +1,81 @@
+/*Day05-Class20
+Example 1.1
+Constructor with multiple object */
+
+//project Sample 
+package org.test;
+public class Employee {
+
+	public Employee () {// constructor
+		System.out.println("Employee Information");
+	}
+	public Employee(String name) {
+		System.out.println(name);
+	}
+	public Employee(int id, long phNo) {
+		System.out.println("ID is "+ id +  "\nPhone number is "+phNo);
+	}
+	public Employee(long phNo, int id) {
+		System.out.println("Alter phno no is "+phNo + "\nAlter id is "+id);
+	}
+		public static void main(String[] args) {
+    System.out.println("***object created for each constructor***");
+		Employee a = new Employee();
+		Employee b = new Employee("balaji");
+		Employee c = new Employee(10,1234567l);
+		Employee d = new Employee(456789756l,12);
+		
+	}
+}
+/* runtime output
+***object created for each constructor***
+Employee Information
+balaji
+ID is 10
+Phone number is 1234567
+Alter phno no is 456789756
+Alter id is 12
+*/
+
+
+
+
+
+/*Day05-Class20
+Example 1.2
+Constructor with Single object */
+
+//project Sample 
+package org.test;
+
+public class Employee {
+
+	public Employee () {// constructor
+		this("balaji");
+		System.out.println("Employee Information");//4
+	}
+	public Employee(String name) {
+		this(10,1234567l);
+		System.out.println(name);//3
+	}
+	public Employee(int id, long phNo) {
+		this(456789l,12);
+		System.out.println("ID is "+ id +  "\nPhone number is "+phNo);//2
+	}
+	public Employee(long phNo, int id) {
+		System.out.println("Alter phno no is "+phNo + "\nAlter id is "+id);//1
+	}
+		public static void main(String[] args) {
+    System.out.println("***single object created for all constructor***");
+		Employee a = new Employee();
+		
+	}
+}
+/* runtime output***object created for each constructor***
+Alter phno no is 456789
+Alter id is 12
+ID is 10
+Phone number is 1234567
+balaji
+Employee Information
+*/
