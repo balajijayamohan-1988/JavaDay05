@@ -37,3 +37,109 @@ public static void main(String[] args) {
 
 
 
+/* Assignment Day05-2
+ * Solve: Constructor with two class with extends
+ * project: Java Constructor 
+ */
+package org.test;
+
+public class B {//parent
+	public B() {
+		System.out.println("Super Class");
+	}
+	
+}
+package org.test;
+
+
+
+public class A extends B {// child
+
+	public A() {
+		System.out.println("Default Constructor");
+	}
+public static void main(String[] args) {
+	A a = new A();
+}
+
+}
+/* runtime output
+Super Class
+Default Constructor
+*/
+
+
+
+
+
+/* Assignment Day05-4
+ * Solve: Constructor with two class with "Super" keyword
+ * project: Java Constructor 
+ */
+package org.test;
+
+public class B {//parent
+	public B() {//3
+		System.out.println("1. Super Class");
+	}
+	public B(int iD) {//2
+		this();
+		System.out.println("2. ID is: "+iD);
+	}
+}
+package org.test;
+
+public class A extends B {// child
+
+	public A() {//1
+	super(12);
+		System.out.println("3. Default Constructor");
+	}
+public static void main(String[] args) {
+	A a = new A();
+
+	
+}
+
+	
+}
+/* runtime output
+1. Super Class
+2. ID is: 12
+3. Default Constructor
+*/
+
+
+
+
+
+/* Assignement Day5-5
+ * Solve: constructor with "super" key and extension 
+ * project Java Constructor
+ */
+
+package org.test;
+public class B {//parent
+	public B(int iD) {//2
+		System.out.println("1. ID is: "+iD);
+	}
+}
+package org.test;
+public class A extends B {// child
+	public A() {//1
+	super(12);
+		System.out.println("2. Default Constructor");
+	}
+public static void main(String[] args) {
+	A a = new A();
+}
+}
+/* runtime output
+1. ID is: 12
+2. Default Constructor
+*/
+
+
+
+
+
