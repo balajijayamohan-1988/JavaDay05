@@ -2,7 +2,7 @@
 Example 1.1
 Constructor with multiple object */
 
-//project Sample 
+//project Java Constructor 
 package org.test;
 public class Employee {
 
@@ -45,7 +45,7 @@ Alter id is 12
 Example 1.2
 Constructor with Single object */
 
-//project Sample 
+//project Java Constructor 
 package org.test;
 
 public class Employee {
@@ -87,7 +87,7 @@ Employee Information
 /* Day05-Class21
 Example 1.1
 Description: project Constructor using constructor chaning this */
-//project Constructor Chaning
+//project Java Constructor
 package org.test;
 
 public class Company{ //parent
@@ -142,3 +142,70 @@ Employee id and Phone no is :
 Employee name is : baljai
 Employee Information
 */
+
+
+
+
+/*Day05-Class21
+Example 2
+Description: Constructor using constructor chaining with "Super" Keyword 
+project Java Constructor */
+
+package org.test;
+
+public class Company{ //parent
+	
+	public Company() {//6
+		this(34);
+		System.out.println("2. Para construction");//2
+	}
+	public Company(int id) {//7
+		System.out.println("1. Company id is : "+id);//1
+	}
+	public Company(String name) {//5
+		this();
+		System.out.println("3. Company name is : "+name);//3
+	}
+    
+}
+
+package org.test;
+public class Employee extends Company {//child
+
+	public Employee () {//4
+		super("TCS");
+		System.out.println("4. Employee Information");//4
+	}
+	public Employee (String name) {//1
+		this(10,12345678l);
+		System.out.println("7. Employee name is : "+name);//7
+	}
+	public Employee (int iD, long phNo) {//2
+		this(3456782l,21);
+		System.out.println("6. Employee id and Phone no is : \n	"+iD+phNo);//6
+	}
+	public Employee (long phNo, int iD) {//3
+		this();
+		System.out.println("5. Employee phno&Id is :\n	"+phNo+iD);//5
+	}
+	public static void main(String[] args) {
+		
+		Employee e = new Employee("balaji");
+	}
+	
+}
+/* runtime output
+1. Company id is : 34
+2. Para construction
+3. Company name is : TCS
+4. Employee Information
+5. Employee phno&Id is :
+	345678221
+6. Employee id and Phone no is : 
+	1012345678
+7. Employee name is : balaji
+*/
+
+
+
+
