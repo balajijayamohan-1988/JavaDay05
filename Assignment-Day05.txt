@@ -1,0 +1,39 @@
+/* Assignment Day05-1
+ * project: Java Constructor 
+ */
+package org.test;
+
+public class A {
+
+	public A() {
+		this("JAVA");//1
+		System.out.println("4. Default Constructor");
+	}
+	public A(int iD) {//3
+		this(6456.00f);
+		System.out.println("2. ID is: "+iD);
+	}
+	public A(String name) {//2
+		this(12);
+		System.out.println("3. Name is: "+name);
+	}
+	public A(float salary) {//4
+		System.out.println("1. Salary is: "+salary);
+	}
+public static void main(String[] args) {
+	A a = new A();
+	
+}
+	
+}
+/* runtime output
+1. Salary is: 6456.0
+2. ID is: 12
+3. Name is: JAVA
+4. Default Constructor
+*/
+
+
+
+
+
