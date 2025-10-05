@@ -79,3 +79,66 @@ Phone number is 1234567
 balaji
 Employee Information
 */
+
+
+
+
+
+/* Day05-Class21
+Example 1.1
+Description: project Constructor using constructor chaning this */
+//project Constructor Chaning
+package org.test;
+
+public class Company{ //parent
+	
+	public Company() {//1
+		this(100);
+		System.out.println("Para construction");//3
+	}
+	public Company(int id) {//2
+		this("tcs");
+		System.out.println("Company id is : "+id);//2
+	}
+	public Company(String name) {//3
+		
+		System.out.println("Company name is : "+name);//1
+	}
+    
+}
+
+package org.test;
+public class Employee extends Company {//child
+
+	public Employee () {//1
+		this("baljai");//4
+		System.out.println("Employee Information");
+	}
+	public Employee (String name) {//2
+		this(12,12345678l);
+		System.out.println("Employee name is : "+name);//3
+	}
+	public Employee (int iD, long phNo) {//3
+		this(234576l,23);
+		System.out.println("Employee id and Phone no is : \n	"+iD+phNo);//2
+	}
+	public Employee (long phNo, int iD) {//4
+		
+		System.out.println("Employee phno&Id is :\n	"+phNo+iD);//1
+	}
+	public static void main(String[] args) {
+		new Employee();
+	}
+	
+}
+/* runtime output
+Company name is : tcs
+Company id is : 100
+Para construction
+Employee phno&Id is :
+	23457623
+Employee id and Phone no is : 
+	1212345678
+Employee name is : baljai
+Employee Information
+*/
